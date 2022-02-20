@@ -14,22 +14,34 @@ if (isset($_POST['logout'])){
 //Set up the values for the game
 //0 is Rock, 1 is Paper, 2 is Scissors
 $names = array('Rock', 'Paper', 'Scissors');
-$human = isset($_POST["human"]) ? $_POST["human"]+ 0 : -1;
+$human = isset($_POST["human"]) ? $_POST["human"]+0 : -1;
 
 $computer = 0; //hard code the computer to Rock
 //TODO make the computer be random
-//$computer = rand(0, 2)
+$computer = rand(0, 2);
 
 //This function takes as its input the computer and human play and returns 'Tie', 'You Lose', 'You Win' depending on play where 'You' is the human being addressed by the computer
 function check($computer, $human){
     //for now this is a rock-savant checking function
     //TODO fix this
+   /*
     if ($human = 0){
         return 'Tie';
     } else if ($human  == 1){
         return 'You Win!';
     } else if ($human == 2){
         return 'You Lose!';
+    }
+    return false;
+    */
+    if($human == $computer){
+        return 'Tie';
+    } else if ( ($human == 0 && $computer == 1) ||
+    ($human == 1 && $computer == 2) ||
+    ($human == 2 && $computer == 0)){
+        return 'You Lose!';
+    } else {
+        return 'You Win!';
     }
     return false;
 }
@@ -70,7 +82,6 @@ $result = check($computer, $human);
                 if ($human == -1){
                     echo "Please select a strategy and press Play. \n";
                 }
-                
                     else if ($human == 3){
                     for($c = 0; $c < 3; $c++){
                         for($h = 0; $h < 3; $h++){
@@ -79,10 +90,12 @@ $result = check($computer, $human);
                         }
                     }
                 } else {
-                    print "Your Play=$names[$human] Computer=$names[$c] Result=$result\n";
+                    print "Your Play=$names[$human] Computer=$names[$computer] Result=$result\n";
                 }
                 ?>
                 
             </pre>
         </div>
-    </body>
+            </body>
+            </html>
+       
