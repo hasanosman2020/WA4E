@@ -1,10 +1,10 @@
 <?php
 $guess = '';
-$message = false;
+$message = true;
 if (isset($_POST['guess'])){
     //trick for integer/numeric parameters
     $guess = $_POST['guess'] + 0;
-    if ($guess = 42){
+    if ($guess == 42){
         $message = 'Great job!';
     } else if ($guess < 42){
         $message = 'Too low!';
@@ -28,7 +28,7 @@ if ($message !== false){
     <p><label for='guess'>Input Guess</label>
 <input type='text' name='guess' id='guess' size='50'
 <?php
-echo 'value="'.htmlentities($guess). '"';
+echo 'value="'.htmlentities($guess). ' " ';
 ?>
 />
 </p>

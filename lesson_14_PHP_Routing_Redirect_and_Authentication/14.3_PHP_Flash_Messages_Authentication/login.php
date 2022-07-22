@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset$_POST["account"]) && isset($_POST["pw"]){
+if (isset($_POST["account"]) && isset($_POST["pw"])){
     unset($_SESSION["account"]); //logout current user 
     if ($_POST['pw'] == 'umsi'){
         $_SESSIOM["account"] = $_POST["account"];
