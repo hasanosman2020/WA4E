@@ -47,3 +47,5 @@ if ( isset($_SESSION['error']) ) {
 <p><input type="submit" value="Add New"/>
 <a href="index.php">Cancel</a></p>
 </form>
+
+
