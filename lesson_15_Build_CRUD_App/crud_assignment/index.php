@@ -25,8 +25,8 @@ session_start();
             echo "</td><td>";
             echo htmlentities($row['mileage']);
             echo "</td><td>";
-            echo('<a href="edit.php?user_id='.$row['user_id'].'">Edit</a> / ');
-            echo('<a href="delete.php?user_id='.$row['user_id'].'">Delete</a>');
+            //echo('<a href="edit.php?user_id='.$row['user_id'].'">Edit</a> / ');
+            //echo('<a href="delete.php?user_id='.$row['user_id'].'">Delete</a>');
 
             echo "</td></tr>";
         }
